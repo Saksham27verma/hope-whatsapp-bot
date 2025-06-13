@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: hope-whatsapp-bot
+    env: node
+    buildCommand: npm install
+    startCommand: node whatsapp-bot.js
+    envVars:
+      - key: WHATSAPP_BOT_NUMBER
+        value: +91 9311614417
+      - key: WHATSAPP_BOT_PORT
+        value: 3100
+      - key: NODE_ENV
+        value: production
+    healthCheckPath: /health
+    autoDeploy: true 
